@@ -16,10 +16,41 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', function () {
-    return view('index');
-});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+                // dashboard
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+
+                // ແຈ້ງປັນຫາ
+Route::get('index', function () {
+    return view('index');
+});
+
+                // ຟອມຮັບປັນຫາ
+Route::get('receiveprob', function () {
+    return view('receiveprob.ProblemTable');
+});
+Route::get('team', function () {
+    return view('receiveprob.team');
+});
+
+                // ຟອມແຈ້ງສະຖານະ 
+Route::get('workresult', function () {
+    return view('workresult.workTable');
+}); 
+Route::get('form', function () {
+    return view('workresult.form');
+});
+
+                // ຟອມຄຳເຫັນ
+Route::get('comment', function () {
+    return view('comment.cmtable');
+}); 
+Route::get('cmform', function () {
+    return view('comment.cmform');
+});
