@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
                 // dashboard
 Route::get('dashboard', function () {
@@ -27,8 +28,8 @@ Route::get('dashboard', function () {
 });
 
                 // ແຈ້ງປັນຫາ
-Route::get('index', function () {
-    return view('index');
+Route::get('probapp', function () {
+    return view('probapp');
 });
 
                 // ຟອມຮັບປັນຫາ

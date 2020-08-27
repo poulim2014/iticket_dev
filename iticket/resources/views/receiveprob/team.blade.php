@@ -112,7 +112,7 @@
                             <option>Scion</option>
                             <option>Daihatsu</option>
                             <option>Hino</option>
-                        </select>
+                    </select>
                 </div>
             </div>
 

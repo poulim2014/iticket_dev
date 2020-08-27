@@ -19,6 +19,7 @@
 
         <!-- App styles -->
         <link rel="stylesheet" href="{{ asset('css/apps.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
     </head>
 
     <body data-sa-theme="8">

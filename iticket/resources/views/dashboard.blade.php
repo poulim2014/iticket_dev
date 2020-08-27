@@ -4,7 +4,7 @@
 
                         <li class="navigation__active"><a href="dashboard"><i class="zmdi zmdi-home"></i> Home</a></li>
 
-                        <li class="@@problemactive"><a href="index"><i class="zmdi zmdi-comment-alert zmdi-hc-fw"></i> ແຈ້ງປັນຫາ</a></li>
+                        <li class="@@problemactive"><a href="probapp"><i class="zmdi zmdi-comment-alert zmdi-hc-fw"></i> ແຈ້ງປັນຫາ</a></li>
 
                         <li class="@@recieveactive"><a href="receiveprob"><i class="zmdi zmdi-case-download zmdi-hc-fw"></i> ຮັບປັນຫາ</a></li>
 
