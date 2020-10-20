@@ -18,7 +18,14 @@
 @section('content')
 
 <div class="card"><div class="card widget-past-days">
+
     <div class="card-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
+
         <h4 class="card-title">Dashboard</h4>
         <h6 class="card-subtitle">ສະຖານະປັນຫາທັງໝົດ</h6>
     </div>

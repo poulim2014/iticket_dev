@@ -354,22 +354,38 @@
             </header>
 
             <aside class="sidebar">                                 <!-- ແຖບທາງຂ້າງ -->
+                @guest    
                 <div class="scrollbar-inner">
 
                     <div class="user">                              <!-- user -->
-                        <div class="user__info" data-toggle="dropdown">
+                        <div class="user__info">
                             <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
                             <div>
-                                <div class="user__name">Malinda Hollaway</div>
-                                <div class="user__email">malinda-h@gmail.com</div>
+                                <h3><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></h3>
                             </div>
                         </div>
+                @else
 
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">View Profile</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
+                        <div class="user">
+                            <div class="user__info" data-toggle="dropdown">
+                                <div>
+                                    <div class="user__name"><h3><i class="zmdi zmdi-account zmdi-hc-fw"></i>{{ Auth::user()->name }}<span class="caret"></span>
+                                    </h3></div>
+                                </div>
+                            </div>
+    
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>                                
+                            </div>
+                        </div>  
                     </div>
 
                     <ul class="navigation">
@@ -387,6 +403,7 @@
                         <li class="@@widgetactive"><a href="#"><i class="zmdi zmdi-widgets"></i> ຜົນການອອກວຽກ</a></li> --}}
                     </ul>
                 </div>
+                @endguest
             </aside>
 
             <section class="content">                               <!-- content -->
@@ -436,6 +453,8 @@
 
         <!-- App functions and actions -->
         <script src="{{ asset('js/app.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> --}}
     </body>
 
 <!--Designed By ALpha-->

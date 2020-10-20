@@ -19,13 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
                 // dashboard
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+// Route::get('dashboard', function () {
+//     return view('dashboard');
+// });
 
                 // ແຈ້ງປັນຫາ
 Route::get('probapp', function () {

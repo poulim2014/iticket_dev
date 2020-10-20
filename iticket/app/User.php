@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'username', 'password',
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function position(){
+        return $this->hasMany(position::class,'position_id');
+    }
+
+    public function getPositionAttribute(){
+        $user = User::with('profiles')->find(Auth::user()->id);
+        return $user->position->position_name;
+    }
 }
